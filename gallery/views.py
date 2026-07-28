@@ -3,7 +3,7 @@ from gallery.models import Photograph
 
 def index(request):
     
-    photographs = Photograph.objects.filter(published=True)
+    photographs = Photograph.objects.order_by("-photograph_date").filter(published=True) # aapenas adicionar um - ao argumento passado em "order_by" para apresentar em ordem decrescente
 
     return render(request, 'gallery/index.html', {"cards": photographs})
 

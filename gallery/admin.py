@@ -2,7 +2,7 @@ from django.contrib import admin
 from gallery.models import Photograph
 
 class ListingPhotographs(admin.ModelAdmin):
-    list_display = ("id", "name", "subtitle", "published")
+    list_display = ("id", "name", "subtitle", "photograph_date","published")
     list_display_links = ("id", "name")
     search_fields = ("name",)
     list_filter = ("category",)
